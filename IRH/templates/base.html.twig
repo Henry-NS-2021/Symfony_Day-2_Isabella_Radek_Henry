@@ -20,6 +20,14 @@
                     text-shadow: 0px -5px 5px black;
                 }
 
+                header{
+                    height: 100px;
+                }
+
+                #content{
+                    height: 100%;
+                }
+
                 .list_elements li{
                     margin: 0;
                 }
@@ -33,9 +41,9 @@
     <body>
     {# ATTENTOIN: If you activate the BODY TWIG tag, it will be ENTIRELY overwritten by the new content in a chlid page  #}
     {# {% block body %} #} 
-        <header class="m-0"> 
+        <header class="m-0 h-50"> 
             {% block header %}
-                <h1 id="agency_header" class="fw-lighter text-light">IRH Journeys</h1>
+                <h1 id="agency_header" class="fw-lighter text-light fs-2 text-end py-4 pe-4 mb-3">IRH Journeys</h1>
             {% endblock %}
         </header>
 
@@ -43,8 +51,8 @@
         <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-warning m-0 p-0">
             {% block nav %}
                 <div class="container-fluid">
-                    <a class="navbar-brand border-end border-dark ps-4 pe-5" href="cr_3_index.html"><img class="img-thumbnail"
-                            src="img/logo-removebg-preview.png" alt="logo" width="30" height="24"></a>
+                    <a class="navbar-brand border-end border-dark ps-4 pe-5" href="/home"><img class="img-thumbnail rounded"
+                            src="{{asset('pictures/athens.jpg')}}" alt="logo" width="60" height="48s"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/home"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -69,7 +77,7 @@
             {% endblock %}
         </nav>
 
-        <main class="p-5">
+        <main id="content" class="p-5">
             {% block main %}
 
             here comes the main content

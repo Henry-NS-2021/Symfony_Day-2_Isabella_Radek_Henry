@@ -1,14 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
-
 
     {% block main %}
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="card h-100">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="{{asset('pictures/bella.jpg')}}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Isabella</h5>
             <p class="card-text">Responsible for the most aesthetically beautiful sceneries on your journey. The nicest landscapes - this is the least she will guarantee to you</p>
@@ -17,7 +15,7 @@
     </div>
     <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="card h-100">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="{{asset('pictures/radek.jpg')}}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Radek</h5>
             <p class="card-text">I get the things happen: quick, precise and with quality. Any issues on your journey are solved with the outmost efficiency and care.</p>
@@ -26,7 +24,7 @@
     </div>
     <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="card h-100">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="{{asset('pictures/henryNew.jpg')}}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Henry</h5>
             <p class="card-text">Keeping the overview of your trip, the general feeling, practicalities of your journey is my goal number one. You will get what you paid for... at least.</p>

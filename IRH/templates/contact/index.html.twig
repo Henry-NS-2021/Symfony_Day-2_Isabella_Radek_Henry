@@ -1,20 +1,60 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block stylesheets %}
+            {#{{ encore_entry_link_tags('app') }}#}
+            <style type="text/css">
+                main{
+                    background: url({{asset('pictures/nyc.jpg')}}) center center;
+                    background-size: cover;
+                    {# font-size: 7rem; #}
+                    font-family: arial;
+                    padding: 50px 0% 0%;
+                    {# text-shadow: 0px -5px 5px black; #}
+                }
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+            </style>
+        {% endblock %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{% block main %}
+ <fieldset class="mx-auto">
+            <legend><h1 class='card-title text-center text-white display-6 my-5'>REQUEST <span class="text-warning">YOUR </span>JOURNEY</h1></legend>
+        <form action="actions/a_create.php" method="post" enctype="multipart/form-data">
+            <table class="w-75 mx-auto table table-muted table-hover text-light">
+                <tr>
+                    <td><label for="first_name">First Name</label>   </td> 
+                    <td><input class="form-control" type="text" name="first_name" id="first_name" placeholder="Your first name"></td>
+                </tr>
+                <tr>
+                    <td><label for="last_name">Last Name</label>   </td> 
+                    <td><input class="form-control" type="text" name="last_name" id="last_name" placeholder="Your Last name"></td>
+                </tr>
+               
+                <tr>
+                    <td><label for="country">Email</label></td>
+                    <td><input class="form-control" type="text" name="country" id="country" placeholder="What is your email?"></td>
+                </tr>
+                <tr>
+                    <td><label for="duration">Duration</label></td>
+                    <td><input class="form-control" type="number" name="duration" id="duration" placeholder="How long should your journey last?"></td>
+                </tr>
+                <tr>
+                    <td><label for="price">Budget</label></td>
+                    <td><input class="form-control" type="number" name="price" id="price" placeholder="What is the budget for the journey?"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="description">Description</label>
+                    </td>
+                    <td>
+                        <textarea class="form-control" type="text" id="description" rows="8" placeholder="Tell us where you want to go? What would you like to see? What would you like to feel? Let us know"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center" colspan="2"><button class="btn btn-outline-warning w-100 fw-light fs-5 py-0 my-3" type="submit">Submit your request</button></td>
+                </tr>
+            </table>
+        </form>
+        </fieldset>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/my-php-exercises/Symfony/Day-2/Collab with Isabella and Radek/SymfonyDay2_Isabella_Radek_Henry/IRH/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/my-php-exercises/Symfony/Day-2/Collab with Isabella and Radek/SymfonyDay2_Isabella_Radek_Henry/IRH/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
-    </ul>
-</div>
 {% endblock %}
+
