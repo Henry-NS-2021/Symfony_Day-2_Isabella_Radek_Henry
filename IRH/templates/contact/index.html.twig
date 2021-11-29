@@ -3,6 +3,24 @@
 {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
             <style type="text/css">
+                #agency_header{
+                    background: url({{asset('pictures/pack_your_bags.jpg')}}) 300px center;
+                    background-size: cover;
+                    font-size: 7rem;
+                    font-family: "times new roman";
+                    padding: 50px 0% 0%;
+                    text-shadow: 0px -5px 5px black;
+                    height: 80vh;
+                }
+
+                #content{
+                    height: 100%;
+                }
+
+                .list_elements li{
+                    margin: 0;
+                }
+
                 main{
                     background: url({{asset('pictures/nyc.jpg')}}) center center;
                     background-size: cover;

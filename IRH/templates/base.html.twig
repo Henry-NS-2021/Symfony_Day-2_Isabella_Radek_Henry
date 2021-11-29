@@ -12,16 +12,13 @@
             {#{{ encore_entry_link_tags('app') }}#}
             <style type="text/css">
                 #agency_header{
-                    background: url({{asset('pictures/athens.jpg')}}) center center;
+                    background: url({{asset('pictures/pack_your_bags.jpg')}}) 300px center;
                     background-size: cover;
                     font-size: 7rem;
-                    font-family: arial;
+                    font-family: "times new roman";
                     padding: 50px 0% 0%;
                     text-shadow: 0px -5px 5px black;
-                }
-
-                header{
-                    height: 100px;
+                    height: 80vh;
                 }
 
                 #content{
@@ -41,9 +38,9 @@
     <body>
     {# ATTENTOIN: If you activate the BODY TWIG tag, it will be ENTIRELY overwritten by the new content in a chlid page  #}
     {# {% block body %} #} 
-        <header class="m-0 h-50"> 
+        <header class="m-0 h-100"> 
             {% block header %}
-                <h1 id="agency_header" class="fw-lighter text-light fs-2 text-end py-4 pe-4 mb-3">IRH Journeys</h1>
+                <h1 id="agency_header" class="fw-lighter text-light text-start fst-italic pt-4 ps-5"><span class="text-warning display-2">IRH</span><br> Journeys</h1>
             {% endblock %}
         </header>
 
