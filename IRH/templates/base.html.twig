@@ -19,6 +19,10 @@
                     padding: 50px 0% 0%;
                     text-shadow: 0px -5px 5px black;
                 }
+
+                .list_elements li{
+                    margin: 0;
+                }
             </style>
         {% endblock %}
 
@@ -27,81 +31,87 @@
         {% endblock %}
     </head>
     <body>
-    {# {% block body %} #}
-        <header> 
-        {% block header %}
-            <h1 id="agency_header" class="fw-lighter text-light">IRH Journeys</h1>
-        {% endblock %}
+    {# ATTENTOIN: If you activate the BODY TWIG tag, it will be ENTIRELY overwritten by the new content in a chlid page  #}
+    {# {% block body %} #} 
+        <header class="m-0"> 
+            {% block header %}
+                <h1 id="agency_header" class="fw-lighter text-light">IRH Journeys</h1>
+            {% endblock %}
         </header>
 
         {# bootstrap navbar #}
-        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-warning mt-0">
-        {% block nav %}
-            <div class="container-fluid">
-                <a class="navbar-brand border-end border-dark ps-4 pe-5" href="cr_3_index.html"><img class="img-thumbnail"
-                        src="img/logo-removebg-preview.png" alt="logo" width="30" height="24"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/news">News</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/contact">About</a>
-                        </li>
-                    </ul>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-warning m-0 p-0">
+            {% block nav %}
+                <div class="container-fluid">
+                    <a class="navbar-brand border-end border-dark ps-4 pe-5" href="cr_3_index.html"><img class="img-thumbnail"
+                            src="img/logo-removebg-preview.png" alt="logo" width="30" height="24"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/home"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/news">News</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/contact">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about">About</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        {% endblock %}
+            {% endblock %}
         </nav>
 
-        <main>
-        {% block main %}
+        <main class="p-5">
+            {% block main %}
 
-        here comes the main content
+            here comes the main content
 
-        {% endblock %}
+            {% endblock %}
         </main>
 
-        <footer>
-        {% block footer %}
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                 <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">News</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                    </ul></div>
-                <div class="col"></div>
+        <footer class="bg-dark pt-5 pb-2 text-light">
+            {% block footer %}
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-3">
+                        <ul class="navbar-nav list_elements">
+                            <li class="nav-item py-0 ">
+                                <a class="nav-link text-warning text-decoration-none py-0 my-0 active" aria-current="page" href="/home">Home</a>
+                            </li>
+                            <li class="nav-item py-0">
+                                <a class="nav-link text-warning text-decoration-none py-0 my-0" href="/news">News</a>
+                            </li>
+                            <li class="nav-item py-0">
+                                <a class="nav-link text-warning text-decoration-none py-0 my-0" href="/contact">Contact</a>
+                            </li>
+                            <li class="nav-item py-0">
+                                <a class="nav-link text-warning text-decoration-none py-0 my-0" href="/about">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-3">
+                        <h6>ADDRESS:</h6>
+                        <small>Kettenbrueckegasse 23/2/12<br>1050 Vienna<br>Austria</small>
+                    </div>
+                </div>
+                
             </div>
-            
-        </div>
-        <p><small></small></p>
+            <p class="text-center text-muted mt-4"><small>2021 &copy; IRH Travels<br>
+            Powered by Isabella, Radek & Henry</small></p>
 
-        {% endblock %}
+            {% endblock %}
         </footer>
 
         {% block bootstrap %}
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         {% endblock %}
     {# {% endblock %} #}
     </body>
