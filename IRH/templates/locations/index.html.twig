@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}All records{% endblock %}
+
+
+{% block main %}
+
+    {% for location in locations  %}
+
+        <ul>
+
+            <li>{{ location.name }} </li>
+
+              <li>{{ location.price }}</li>
+            <li>{{ location.description }}</li>
+      <li>{{ location.image }}</li>
+
+        </ul>
+
+    {% endfor %}
+
+{% endblock %}
